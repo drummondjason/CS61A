@@ -91,5 +91,27 @@ print(is_prime(10), False)
 print(is_prime(7), True)
 print(is_prime(1), False)
 
+#Q5 : Fizzbuzz
+def fizzbuzz(n):
+    for i in range(n+1):
+        if i%3 == 0 and i%5==0:
+            print('fizzbuzz')
+        elif i%3 ==0:
+            print('fizz')
+        elif i%5 == 0:
+            print('buzz')
+        else:
+            print(str(i))
 
+fizzbuzz(16)
 
+#Q6: Unique Digits
+def unique_digits(n):
+    s = set(str(n))
+    print(len(s))
+
+unique_digits(1313131)
+
+unique_digits(8675309)
+
+unique_digits(13173131)
