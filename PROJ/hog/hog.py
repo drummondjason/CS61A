@@ -39,6 +39,11 @@ def tail_points(opponent_score):
     """
     # BEGIN PROBLEM 2
     "*** YOUR CODE HERE ***"
+    ones = opponent_score%10
+    while opponent_score > 99:
+        opponent_score -= 100
+    tens = opponent_score//10
+    return 2*abs(tens-ones) + 1
     # END PROBLEM 2
 
 
@@ -56,6 +61,12 @@ def take_turn(num_rolls, opponent_score, dice=six_sided):
     assert num_rolls <= 10, 'Cannot roll more than 10 dice.'
     # BEGIN PROBLEM 3
     "*** YOUR CODE HERE ***"
+    points = 0
+    if num_rolls == 0:
+        points = tail_points(opponent_score)
+    else:
+        points = roll_dice(num_rolls, dice)
+    return points
     # END PROBLEM 3
 
 
